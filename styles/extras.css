@@ -1,0 +1,25 @@
+:root {
+    --color01: #3466af;
+    --color02: #3b4cca;
+    --color03: #14378a;
+    --color04: #1d2c5e;
+    --color05: #f1e702;
+    --color06: #ffcc00;
+    --color07: #978018;
+    --color08: #6e0000;
+    --color09: #aa0000;
+    --color10: #cc0000;
+    --color11: #ff0000;
+}
+
+@keyframes showing {
+    to {
+        transform: translate(-50%, 100%);
+    }
+}
+
+@keyframes z-index {
+    to {
+        z-index: 1;
+    }
+}
