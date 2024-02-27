@@ -1,0 +1,111 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+
+    display: grid;
+    place-items: center;
+
+    background-color: var(--color04);
+}
+
+#pokemon {
+    position: relative;
+}
+
+#pokemon h1 {
+    position: absolute;
+    white-space: nowrap;
+
+    top: -4%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    background-color: var(--color01);
+    color: #fff;
+
+    border-radius: 10px;
+
+    padding: 5px 10px;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#pokemonWord { color: var(--color06) }
+
+#pokemonImage {
+    background-color: var(--color02);
+    border-radius: 10px;
+
+    padding: 25px 15px;
+}
+#pokemonImage > img {
+    filter: brightness(0) drop-shadow(2px 2px #00000050);
+    display: block;
+    margin: 0 auto;
+
+    width: 100%;
+}
+
+#pokemon #pokemonInput { position: relative }
+#pokemon #pokemonInput input:disabled { filter: grayscale(50%); }
+#pokemon #pokemonInput .pointer {
+    cursor: pointer;
+
+    transition: all ease-in-out .1s;
+}
+#pokemon #pokemonInput .pointer:active { box-shadow: inset 0 0 3px #000 }
+#pokemon #pokemonInput #inputs {
+    position: absolute;
+    bottom: -9px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+}
+#pokemon #pokemonInput input {
+    font-size: 1.5em;
+    border: 2px solid;
+    outline: none;
+    padding: 4px;
+}
+#pokemon #pokemonInput #inputs input[type="text"] {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-right: none;
+    
+    background-color: var(--color01);
+    color: var(--color04);
+}
+#pokemon #pokemonInput #inputs input[type="text"]::placeholder { color: var(--color03); }
+#pokemon #pokemonInput #inputs input[type="button"] {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-left: none;
+
+    background-color: var(--color11);
+    color: var(--color08);
+}
+
+#pokemon #pokemonInput #btnTry {
+    position: absolute;
+    z-index: -1;
+    /* bottom: -20px; */
+    bottom: -9px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 55%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+
+    animation: showing 1.1s ease-in-out forwards 3s, z-index .1s forwards 4.5s;
+    /* animation: showing 1s ease-in-out forwards; */
+    background-color: var(--color05);
+    color: var(--color07);
+}
