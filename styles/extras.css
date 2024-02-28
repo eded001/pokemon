@@ -1,4 +1,5 @@
 :root {
+    /* colors */
     --color01: #3466af;
     --color02: #3b4cca;
     --color03: #14378a;
@@ -10,6 +11,15 @@
     --color09: #aa0000;
     --color10: #cc0000;
     --color11: #ff0000;
+
+    /* animation */
+    --box-shadow-config-values: 0 0 5px 1px;
+    --box-shadow-config-color: #f00;
+    --transform-config-left: -53%;
+    --transform-config-right: -47%;
+
+    /* drop-shadow */
+    --drop-shadow-config: -2px -2px #00000050;
 }
 
 @keyframes showing {
