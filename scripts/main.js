@@ -17,17 +17,6 @@ inputBtnTry.addEventListener('click', () => {
 
     inputBtnTry.animate([
         {
-            zIndex: '-1'
-        }
-    ],
-        {
-            duration: 1,
-            fill: 'forwards'
-        }
-    );
-
-    inputBtnTry.animate([
-        {
             transform: 'translate(-50%, 0)'
         }
     ],
