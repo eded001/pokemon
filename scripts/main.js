@@ -1,6 +1,7 @@
 const inputPokemon = document.querySelector('#pokemonInputId');
 const inputBtnVerify = document.querySelector('#btnVerify');
 const inputBtnTry = document.querySelector('#btnTry');
+const inputs = document.querySelector('#inputs');
 let timer;
 
 function randomValue() {
@@ -14,6 +15,40 @@ window.addEventListener('load', () => {
 inputBtnTry.addEventListener('click', () => {
     inputBtnTry.setAttribute('disabled', 'disabled');
 
+    inputBtnTry.animate([
+        {
+            zIndex: '-1'
+        }
+    ],
+        {
+            duration: 1,
+            fill: 'forwards'
+        }
+    );
+
+    inputBtnTry.animate([
+        {
+            transform: 'translate(-50%, 0)'
+        }
+    ],
+        {
+            duration: 500,
+            fill: 'forwards'
+        }
+    );
+
+    inputBtnTry.animate([
+        {
+            transform: 'translate(-50%, 100%)'
+        }
+    ],
+        {
+            duration: 500,
+            fill: 'forwards',
+            delay: 5000
+        }
+    );
+
     showingPokemonData(randomValue());
 });
 inputBtnVerify.addEventListener('click', () => {
@@ -23,7 +58,8 @@ inputBtnVerify.addEventListener('click', () => {
     const operacao = newInputPokemon == img.getAttribute('alt');
 
     if(operacao) {
-        img.style.filter = 'brightness(1) drop-shadow(3px 3px #111)';
+        inputPokemon.value = '';
+        img.style.filter = 'brightness(1) drop-shadow(var(--drop-shadow-config))';
         let i = 6;
 
         timer = setInterval(() => {
@@ -31,7 +67,6 @@ inputBtnVerify.addEventListener('click', () => {
 
             inputBtnTry.value = `Atualizando em ${i}`;
             inputBtnTry.setAttribute('disabled', 'disabled');
-            
 
             // i <= 1 ? clearInterval(timer) : null;
             if(i <= 1) {
@@ -40,9 +75,37 @@ inputBtnVerify.addEventListener('click', () => {
 
                 inputBtnTry.value = 'Tentar outro pokémon';
                 inputBtnTry.removeAttribute('disabled');
+
+                img.style.filter = 'brightness(0) drop-shadow(var(--drop-shadow-config))';
             }
         }, 1000);
+    } else {
+        inputs.animate([
+            {
+                transform: 'translateX(var(--transform-config-right))'
+            },
+            {
+                transform: 'translateX(var(--transform-config-left))',
+                boxShadow: 'var(--box-shadow-config-values) var(--box-shadow-config-color)'
+            },
+            {
+                transform: 'translateX(var(--transform-config-right))',
+                boxShadow: 'var(--box-shadow-config-values) var(--box-shadow-config-color)'
+            },
+            {
+                transform: 'translateX(var(--transform-config-left))',
+                boxShadow: 'var(--box-shadow-config-values) var(--box-shadow-config-color)'
+            },
+            {
+                transform: 'translateX(var(--transform-config-right))'
+            },
+            {
+                transform: 'translate(-50%)'
+            }
+        ],
+            {
+                duration: 800
+            }
+        );
     }
-
-    inputPokemon.value = '';
 });
