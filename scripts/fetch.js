@@ -27,6 +27,7 @@ function showingPokemonData(pokemonId) {
 
         console.log(newNamePokemon);
         inputBtnTry.removeAttribute('disabled');
+        img.style.filter = 'brightness(0) drop-shadow(var(--drop-shadow-config))';
     })
     .catch(error => {
         console.error(error);
