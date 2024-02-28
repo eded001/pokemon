@@ -43,11 +43,13 @@ body {
     padding: 25px 15px;
 }
 #pokemonImage > img {
-    filter: brightness(0) drop-shadow(2px 2px #00000050);
+    filter: drop-shadow(var(--drop-shadow-config));
     display: block;
     margin: 0 auto;
 
     width: 100%;
+
+    transition: filter ease-in-out .9s;
 }
 
 #pokemon #pokemonInput { position: relative }
