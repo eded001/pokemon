@@ -14,7 +14,7 @@
 
     /* animation */
     --box-shadow-config-values: 0 0 5px 1px;
-    --box-shadow-config-color: #f00;
+    --box-shadow-config-color: #c20000;
     --transform-config-left: -53%;
     --transform-config-right: -47%;
 
@@ -25,11 +25,5 @@
 @keyframes showing {
     to {
         transform: translate(-50%, 100%);
-    }
-}
-
-@keyframes z-index {
-    to {
-        z-index: 1;
     }
 }
